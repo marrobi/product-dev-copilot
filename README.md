@@ -14,28 +14,30 @@ Toolkit for turning an NHS service idea into:
   - Do: follow [PREREQUISITES.md](PREREQUISITES.md)
   - Check: `./setup-check.sh` (macOS/Linux) or `./setup-check.ps1` (Windows)
 
-2. Scenario + problem statement (VS Code)
-  - Do: run [.github/prompts/generate_scenario_and_problem_statement.prompt.md](.github/prompts/generate_scenario_and_problem_statement.prompt.md) with your rough scenario
-  - Save: `tmp/scenario.md` (or similar)
+2. Scenario + problem statement (VSCode Copilot Chat)
+  - Run `/generate_nhs_service_scenario` <description of scenario>
+  - Save in `tmp/scenario.md`
 
 3. Personas (Microsoft 365 Copilot → Researcher)
   - Open Copilot Chat: https://m365.cloud.microsoft/chat/
   - Researcher docs: https://learn.microsoft.com/en-us/copilot/microsoft-365/researcher-agent
-  - Do: paste your `tmp/scenario.md` into [persona-generation-prompt.md](persona-generation-prompt.md)
+  - Paste your `tmp/scenario.md` into [persona-generation-prompt.md](persona-generation-prompt.md) and run in researcher.
   - Save: `tmp/persona-report.md`
 
-4. Slides (VS Code)
-  - Do: run [.github/prompts/generate_persona_slides_from_report.prompt.md](.github/prompts/generate_persona_slides_from_report.prompt.md) with `tmp/persona-report.md`
+4. Slides (VS Code Copilot Chat)
+  - Run `/generate_persona_slides_from_report` tmp/persona-report.md`
   - Output: `personas/generated/personas-deck.md`
+  - Preview Markdown as slides - Ctrl + Shift + V (Windows) or Cmd + Shift + V (macOS)
 
-5. User journeys (VS Code)
-  - Do: run [.github/prompts/generate_user_journeys.prompt.md](.github/prompts/generate_user_journeys.prompt.md) with your scenario + personas
-  - Save: `user_journeys/data/journey-<short-name>.md`
-  - Details: [user_journeys/README.md](user_journeys/README.md)
+5. User journeys (VS Code Copilot Chat)
+  - Run `/generate_user_journeys` with your scenario + personas
+  - Output: `user_journeys/generated/` with journey docs and diagrams
+  -  Preview Markdown - Ctrl + Shift + V (Windows) or Cmd + Shift + V (macOS)
 
 6. UI prototype from a journey (optional)
-  - Do: run [.github/prompts/build-nhs-app-user-journey-prototype.prompt.md](.github/prompts/build-nhs-app-user-journey-prototype.prompt.md) with a journey file path
+  - Run `/build_nhs_app_user_journey_prototype` with a journey file path.
   - Output: creates/updates `prototype/` and starts the server (usually `http://localhost:3000/frame`, fallback `http://localhost:2000/frame`)
+  - Provide feedback and iterate as needed.
 
 ## Where things live
 
