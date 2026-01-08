@@ -120,6 +120,6 @@ For each identified role, create a comprehensive persona using the following tem
   - Include mental capacity and cognitive considerations where relevant
   - Cite patient experience data and research where available
 
-### Scenario Detials
+### Scenario Details
 
 PASTE SCENARIO HERE
