@@ -11,8 +11,7 @@ Toolkit for turning an NHS service idea into:
 ## Quick start
 
 1. Prereqs
-  - Do: follow [PREREQUISITES.md](PREREQUISITES.md)
-  - Check: `./setup-check.sh` (macOS/Linux) or `./setup-check.ps1` (Windows)
+  - Run in Github Codespaces, use provided Dev Container, or alternatively ensure prequisites are installed: `./setup-check.sh` (macOS/Linux) or `./setup-check.ps1` (Windows)
 
 2. Scenario + problem statement (VSCode Copilot Chat)
   - Run `/generate_nhs_service_scenario` <description of scenario>
