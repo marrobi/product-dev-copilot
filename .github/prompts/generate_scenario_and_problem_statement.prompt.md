@@ -2,7 +2,7 @@
 agent: agent
 ---
 
-Take the scenario description I provide and formalize it into a clear, structured format. Ask clarifying questions to ensure the scenario is well-defined and focused on a specific scenario rather than a broad topic.
+Take the scenario description I provide and formalize it into a clear, structured format. Ask clarifying questions to ensure the scenario is well-defined and focused on a specific scenario rather than a broad topic. If no scenario is provided, request one.
 
 Create:
 
