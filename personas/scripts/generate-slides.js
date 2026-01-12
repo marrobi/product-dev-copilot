@@ -109,7 +109,8 @@ class PersonaSlideGenerator {
     }
 
     const personaFiles = fs.readdirSync(this.personasDir)
-      .filter(file => file.endsWith('.json'));
+      .filter(file => file.endsWith('.json'))
+      .sort((a, b) => a.localeCompare(b));
 
     if (personaFiles.length === 0) {
       console.log('No persona files found in:', this.personasDir);
@@ -167,10 +168,30 @@ class PersonaSlideGenerator {
     let combinedFront = '';
     const bodies = [];
 
-    personaFiles.forEach((file, idx) => {
-      const personaPath = path.join(this.personasDir, file);
-      const personaData = this.loadPersonaData(personaPath);
-      const rendered = this.generateSlide(template, personaData);
+    const ordered = personaFiles
+      .map(file => {
+        const personaPath = path.join(this.personasDir, file);
+        const personaData = this.loadPersonaData(personaPath);
+        const workflowStageOrder = Number.isFinite(Number(personaData.workflowStageOrder))
+          ? Number(personaData.workflowStageOrder)
+          : Number.POSITIVE_INFINITY;
+        const workflowStage = typeof personaData.workflowStage === 'string' ? personaData.workflowStage : '';
+        const name = typeof personaData.name === 'string' ? personaData.name : '';
+        return { file, personaPath, personaData, workflowStageOrder, workflowStage, name };
+      })
+      .sort((a, b) => {
+        if (a.workflowStageOrder !== b.workflowStageOrder) {
+          return a.workflowStageOrder - b.workflowStageOrder;
+        }
+        const stageCmp = a.workflowStage.localeCompare(b.workflowStage);
+        if (stageCmp !== 0) return stageCmp;
+        const nameCmp = a.name.localeCompare(b.name);
+        if (nameCmp !== 0) return nameCmp;
+        return a.file.localeCompare(b.file);
+      });
+
+    ordered.forEach((entry, idx) => {
+      const rendered = this.generateSlide(template, entry.personaData);
       const { front, body } = this.extractFrontMatter(rendered);
       if (idx === 0) {
         combinedFront = front; // keep style + meta once
@@ -204,7 +225,8 @@ class PersonaSlideGenerator {
     }
 
     const personaFiles = fs.readdirSync(this.personasDir)
-      .filter(file => file.endsWith('.json'));
+      .filter(file => file.endsWith('.json'))
+      .sort((a, b) => a.localeCompare(b));
 
     console.log('Available persona files:');
     personaFiles.forEach((file, index) => {

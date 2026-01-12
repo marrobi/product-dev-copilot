@@ -4,12 +4,16 @@ theme: default
 paginate: true
 size: 16:9
 style: |
+  section, section * {
+    box-sizing: border-box;
+  }
+
   section {
     display: flex;
     flex-direction: column;
-    padding: 0.8rem;
+    padding: 0.7rem;
     font-size: 0.8rem;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
   }
   
@@ -42,6 +46,7 @@ style: |
     flex: 1;
     min-height: 0;
     align-items: stretch;
+    height: 100%;
   }
 
   .profile-column {
@@ -49,9 +54,11 @@ style: |
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    min-height: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
     align-self: stretch;
+    overflow: hidden;
   }
   
   .profile-section {
@@ -64,7 +71,7 @@ style: |
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    flex: 1 1 auto;
+    flex: 1 1 0;
     min-height: 0;
     overflow: hidden;
   }
@@ -108,14 +115,13 @@ style: |
   }
   
   .personal-data {
-    flex: 1 1 auto;
+    flex: 1 1 0;
     overflow-y: auto;
     padding-right: 0.2rem;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     min-height: 4rem;
-    max-height: calc(100% - 12rem);
   }
 
   .personal-data > div {
@@ -276,7 +282,7 @@ style: |
   }
 
   .logo-container img {
-    height: 40px;
+    height: 34px;
     padding: 0 0.5rem;
     object-fit: contain;
     flex-shrink: 0;
