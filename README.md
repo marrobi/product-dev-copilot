@@ -34,7 +34,7 @@ Toolkit for turning an idea into:
   -  Preview Markdown - Ctrl + Shift + V (Windows) or Cmd + Shift + V (macOS)
 
 6. UI prototype from a journey (optional)
-  - Run `/build_nhs_app_user_journey_prototype` with a journey file path.
+  - Run `/build_nhs_app_prototype_from_user_journey` with a journey file path.
   - Output: creates/updates `prototype/` and starts the server (usually `http://localhost:3000/frame`, fallback `http://localhost:2000/frame`)
   - Provide feedback and iterate as needed.
 
