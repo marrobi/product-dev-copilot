@@ -1,6 +1,6 @@
-# product-dev-copilot
+# Accelerating Product Development with GitHub Copilot
 
-Toolkit for turning an NHS service idea into:
+Toolkit for turning an idea into:
 
 - A clear scenario + problem statement
 - A Researcher-generated persona report
@@ -14,7 +14,7 @@ Toolkit for turning an NHS service idea into:
   - Run in Github Codespaces, use provided Dev Container, or alternatively ensure prequisites are installed: `./setup-check.sh` (macOS/Linux) or `./setup-check.ps1` (Windows)
 
 2. Scenario + problem statement (VSCode Copilot Chat)
-  - Run `/generate_nhs_service_scenario` <description of scenario>
+  - Run `/generate_scenario_and_problem_statement` <description of scenario>
   - Save in `scenarios/scenario.md`
 
 3. Personas (Microsoft 365 Copilot → Researcher)

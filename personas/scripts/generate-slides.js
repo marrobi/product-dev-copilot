@@ -237,7 +237,7 @@ function main() {
     } else if (args[0] === 'help' || args[0] === '--help' || args[0] === '-h') {
       // Show help
       console.log(`
-NHS Persona Slide Generator
+Persona Slide Generator
 
 Usage:
   node generate-slides.js                    Generate slides for all persona files
