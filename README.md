@@ -20,11 +20,11 @@ Toolkit for turning an idea into:
 3. Personas (Microsoft 365 Copilot → Researcher)
   - Open Copilot Chat: https://m365.cloud.microsoft/chat/
   - Researcher docs: https://learn.microsoft.com/en-us/copilot/microsoft-365/researcher-agent
-  - Paste your `scenarios/scenario.md` into the bottom of [persona/persona-generation-prompt.md](persona/persona-generation-prompt.md) and run in researcher.
+  - Paste your `scenarios/scenario.md` into the bottom of [personas/persona-generation-prompt.md](personas/persona-generation-prompt.md) and run in researcher.
   - Save the output to: `personas/persona-report.md`
 
 4. Slides (VS Code Copilot Chat)
-  - Run `/generate_persona_slides_from_report` tmp/persona-report.md`
+  - Run `/generate_persona_slides_from_report` personas/persona-report.md
   - Output: `personas/generated/personas-deck.md`
   - Preview Markdown as slides - Ctrl + Shift + V (Windows) or Cmd + Shift + V (macOS)
 
