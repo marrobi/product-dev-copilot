@@ -1,4 +1,4 @@
-# Accelerating Product Development with GitHub Copilot
+# Accelerating Product Discovery with GitHub Copilot
 
 Toolkit for turning an idea into:
 

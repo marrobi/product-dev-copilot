@@ -3,7 +3,7 @@
 # Run this script to verify all prerequisites are installed
 
 echo -e "\n\033[36m========================================"
-echo "Product Dev Copilot - Setup Verification"
+echo "Product Discovery Copilot - Setup Verification"
 echo -e "========================================\033[0m\n"
 
 all_good=true

@@ -239,7 +239,7 @@ function Check-MarpCli {
 }
 
 Write-Host "`n========================================" -ForegroundColor Cyan
-Write-Host "Product Dev Copilot - Setup Verification" -ForegroundColor Cyan
+Write-Host "Product Discovery Copilot - Setup Verification" -ForegroundColor Cyan
 Write-Host "========================================`n" -ForegroundColor Cyan
 
 # If Node.js was installed after this terminal opened, refresh PATH for this process.
