@@ -6,9 +6,15 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+permissions:
+  contents: read
+
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
     
     strategy:
       matrix:
@@ -55,6 +61,9 @@ jobs:
 
   domain-pack-validation:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
     
     steps:
     - uses: actions/checkout@v4
