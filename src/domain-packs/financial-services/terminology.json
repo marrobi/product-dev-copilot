@@ -1,0 +1,40 @@
+{
+  "domain": "financial-services",
+  "terms": {
+    "customer": "Individual or business using financial services",
+    "account holder": "Person or entity owning a financial account",
+    "KYC": "Know Your Customer - identity verification",
+    "AML": "Anti-Money Laundering controls",
+    "transaction": "Financial operation or payment",
+    "balance": "Amount of money in an account",
+    "statement": "Record of account transactions",
+    "overdraft": "Negative balance facility",
+    "direct debit": "Automated recurring payment",
+    "standing order": "Regular scheduled payment",
+    "IBAN": "International Bank Account Number",
+    "sort code": "Bank branch identifier",
+    "account number": "Unique customer account identifier",
+    "FCA": "Financial Conduct Authority",
+    "PRA": "Prudential Regulation Authority",
+    "FSCS": "Financial Services Compensation Scheme",
+    "vulnerable customer": "Customer needing additional support",
+    "financial crime": "Fraud, money laundering, or related offenses",
+    "conduct risk": "Risk of customer harm",
+    "prudential regulation": "Safety and soundness of firms"
+  },
+  "abbreviations": {
+    "FCA": "Financial Conduct Authority",
+    "PRA": "Prudential Regulation Authority",
+    "KYC": "Know Your Customer",
+    "AML": "Anti-Money Laundering",
+    "CTF": "Counter-Terrorism Financing",
+    "PEP": "Politically Exposed Person",
+    "FSCS": "Financial Services Compensation Scheme",
+    "IBAN": "International Bank Account Number",
+    "BIC": "Bank Identifier Code",
+    "SWIFT": "Society for Worldwide Interbank Financial Telecommunication",
+    "CDD": "Customer Due Diligence",
+    "EDD": "Enhanced Due Diligence",
+    "SAR": "Suspicious Activity Report"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "financial-services",
+  "displayName": "FCA-Regulated Financial Services",
+  "description": "UK Financial Conduct Authority regulated financial services",
+  "designSystem": {
+    "name": "Custom Financial Services Design System",
+    "url": "https://example.com/design-system",
+    "components": [
+      "Alert",
+      "Button",
+      "Card",
+      "Checkbox",
+      "Date picker",
+      "Dropdown",
+      "Error message",
+      "Form field",
+      "Input",
+      "Modal",
+      "Navigation",
+      "Progress indicator",
+      "Radio button",
+      "Table",
+      "Text area",
+      "Warning banner"
+    ],
+    "colors": {
+      "primary": "#003d82",
+      "secondary": "#00a8e1",
+      "text": "#000000",
+      "background": "#ffffff",
+      "warning": "#d4351c",
+      "success": "#00703c"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: src/package-lock.json
+    
+    - name: Install dependencies
+      run: |
+        cd src
+        npm ci
+    
+    - name: Lint
+      run: |
+        cd src
+        npm run lint
+    
+    - name: Build
+      run: |
+        cd src
+        npm run build
+    
+    - name: Test
+      run: |
+        cd tests
+        npm ci
+        npm test
+    
+    - name: Upload coverage
+      if: matrix.node-version == '20.x'
+      uses: codecov/codecov-action@v3
+      with:
+        files: ./tests/coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+
+  domain-pack-validation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate JSON files
+      run: |
+        for file in src/domain-packs/**/*.json; do
+          echo "Validating $file"
+          python3 -m json.tool "$file" > /dev/null
+        done
+    
+    - name: Check domain pack structure
+      run: |
+        for domain in src/domain-packs/*; do
+          if [ -d "$domain" ]; then
+            echo "Checking $domain"
+            test -f "$domain/design-system.json" || (echo "Missing design-system.json in $domain" && exit 1)
+            test -f "$domain/terminology.json" || (echo "Missing terminology.json in $domain" && exit 1)
+            test -f "$domain/compliance-rules.md" || (echo "Missing compliance-rules.md in $domain" && exit 1)
+          fi
+        done
