@@ -1,0 +1,39 @@
+{
+  "domain": "nhs",
+  "terms": {
+    "patient": "Person receiving NHS healthcare services",
+    "clinician": "Healthcare professional providing clinical care",
+    "GP": "General Practitioner - primary care physician",
+    "consultant": "Senior specialist doctor",
+    "ward": "Hospital unit for patient care",
+    "trust": "NHS organization managing hospitals and healthcare services",
+    "ICB": "Integrated Care Board - regional NHS planning body",
+    "secondary care": "Specialist hospital care",
+    "primary care": "First point of contact healthcare (GPs, pharmacies, dentists)",
+    "referral": "Transfer of patient care to a specialist",
+    "discharge": "Release of patient from hospital care",
+    "prescription": "Written authorization for medication",
+    "appointment": "Scheduled healthcare consultation",
+    "triage": "Initial assessment to prioritize care",
+    "A&E": "Accident & Emergency department",
+    "outpatient": "Hospital patient not staying overnight",
+    "inpatient": "Hospital patient staying overnight",
+    "safeguarding": "Protection of vulnerable individuals",
+    "MDT": "Multidisciplinary Team",
+    "care pathway": "Planned sequence of healthcare interventions",
+    "patient record": "Official documentation of patient care",
+    "NHS number": "Unique patient identifier",
+    "EHR": "Electronic Health Record"
+  },
+  "abbreviations": {
+    "NHS": "National Health Service",
+    "GP": "General Practitioner",
+    "A&E": "Accident and Emergency",
+    "CCG": "Clinical Commissioning Group (legacy)",
+    "ICB": "Integrated Care Board",
+    "MDT": "Multidisciplinary Team",
+    "EHR": "Electronic Health Record",
+    "EPR": "Electronic Patient Record",
+    "PACS": "Picture Archiving and Communication System"
+  }
+}

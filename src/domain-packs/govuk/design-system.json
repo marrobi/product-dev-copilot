@@ -1,0 +1,51 @@
+{
+  "name": "govuk",
+  "displayName": "GOV.UK Digital Services",
+  "description": "UK Government digital services with GOV.UK Design System",
+  "designSystem": {
+    "name": "GOV.UK Design System",
+    "url": "https://design-system.service.gov.uk/",
+    "components": [
+      "Accordion",
+      "Back link",
+      "Breadcrumbs",
+      "Button",
+      "Character count",
+      "Checkboxes",
+      "Cookie banner",
+      "Date input",
+      "Details",
+      "Error message",
+      "Error summary",
+      "Fieldset",
+      "File upload",
+      "Footer",
+      "Header",
+      "Inset text",
+      "Notification banner",
+      "Pagination",
+      "Panel",
+      "Phase banner",
+      "Radios",
+      "Select",
+      "Skip link",
+      "Summary list",
+      "Table",
+      "Tabs",
+      "Tag",
+      "Textarea",
+      "Text input",
+      "Warning text"
+    ],
+    "colors": {
+      "primary": "#1d70b8",
+      "secondary": "#00703c",
+      "text": "#0b0c0c",
+      "background": "#ffffff"
+    }
+  },
+  "prototypeKit": {
+    "repository": "https://github.com/alphagov/govuk-prototype-kit",
+    "templatePath": "app/views/"
+  }
+}

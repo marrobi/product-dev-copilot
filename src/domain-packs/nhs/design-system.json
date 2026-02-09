@@ -1,0 +1,49 @@
+{
+  "name": "nhs",
+  "displayName": "NHS Healthcare",
+  "description": "NHS healthcare domain with NHS App design system and UK health terminology",
+  "designSystem": {
+    "name": "NHS App Design System",
+    "url": "https://design-system.nhsapp.service.nhs.uk/",
+    "components": [
+      "Action link",
+      "Back link",
+      "Breadcrumbs",
+      "Button",
+      "Card",
+      "Checkboxes",
+      "Date input",
+      "Details",
+      "Error message",
+      "Error summary",
+      "Fieldset",
+      "Footer",
+      "Header",
+      "Hint",
+      "Input",
+      "Inset text",
+      "Label",
+      "Pagination",
+      "Panel",
+      "Radios",
+      "Select",
+      "Skip link",
+      "Summary list",
+      "Table",
+      "Tabs",
+      "Tag",
+      "Textarea",
+      "Warning callout"
+    ],
+    "colors": {
+      "primary": "#005eb8",
+      "secondary": "#41b6e6",
+      "text": "#212b32",
+      "background": "#ffffff"
+    }
+  },
+  "prototypeKit": {
+    "repository": "https://github.com/nhsuk/nhsuk-prototype-kit",
+    "templatePath": "app/views/pages/"
+  }
+}

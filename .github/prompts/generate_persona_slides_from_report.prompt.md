@@ -8,7 +8,7 @@ Generate a complete Marp slide deck from a user research report markdown file. T
 
 ## Input Required
 
-Provide a link or path to the researcher report markdown file (e.g., `/repos/product-dev-copilot/tmp/persona_report.md` or a URL to a markdown file).
+Provide a link or path to the researcher report markdown file (e.g., `/repos/product-discovery-copilot/tmp/persona_report.md` or a URL to a markdown file).
 
 ## Process Overview
 
@@ -131,7 +131,7 @@ After generation, you can:
 When invoked, provide the path to the research report:
 
 ```
-User: Generate slides from /repos/product-dev-copilot/tmp/persona_report.md
+User: Generate slides from /repos/product-discovery-copilot/tmp/persona_report.md
 ```
 
 or

@@ -1,0 +1,28 @@
+{
+  "domain": "govuk",
+  "terms": {
+    "citizen": "Member of the UK public",
+    "service": "Government digital service or transaction",
+    "user need": "What a user is trying to achieve",
+    "assisted digital": "Support for users who cannot use digital services",
+    "GOV.UK Verify": "Identity assurance service",
+    "GOV.UK Pay": "Government payment service",
+    "GOV.UK Notify": "Government notification service",
+    "Government Digital Service": "Central digital team (GDS)",
+    "service standard": "Quality criteria for government services",
+    "accessibility": "Ensuring services work for all users",
+    "performance data": "Metrics on service usage and effectiveness",
+    "alpha": "Early experimental phase of service development",
+    "beta": "Service available for public testing",
+    "live": "Fully operational public service",
+    "discovery": "Research phase to understand user needs",
+    "department": "Government ministry or agency",
+    "transaction": "Interaction requiring user input or decision"
+  },
+  "abbreviations": {
+    "GDS": "Government Digital Service",
+    "CDDO": "Central Digital and Data Office",
+    "WCAG": "Web Content Accessibility Guidelines",
+    "API": "Application Programming Interface"
+  }
+}
