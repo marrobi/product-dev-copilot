@@ -6,7 +6,7 @@ export interface DomainPack {
   displayName: string;
   description: string;
   designSystem: DesignSystem;
-  prototypeKit?: ProtoypeKit;
+  prototypeKit?: PrototypeKit;
 }
 
 export interface DesignSystem {
@@ -22,7 +22,7 @@ export interface DesignSystem {
   };
 }
 
-export interface ProtoypeKit {
+export interface PrototypeKit {
   repository: string;
   templatePath: string;
 }
