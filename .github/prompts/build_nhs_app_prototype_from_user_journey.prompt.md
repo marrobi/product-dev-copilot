@@ -24,11 +24,37 @@ Turn the journey into a clickable NHS App prototype:
   - BrowserSync usually proxies it on `http://localhost:3000`.
 - Do not open the Simple Browser. Instead, when you finish, provide a clickable link to the mobile frame at `http://localhost:3000/frame` (or `http://localhost:2000/frame` if BrowserSync is not running).
 - Every page must have a route. If there is no route, you will get a 404 even if the file exists.
-- Never use `.html` in routes or `href` values.
-- Use NHS App design system components only: https://design-system.nhsapp.service.nhs.uk/components/
+- Never use `.html` in routes or `href` values.- **No broken links:** Every `href` in the prototype must point to an existing page with a corresponding route. Before adding any link, ensure the target page exists. If you add a link, you must also create the page and route for it.- Use NHS App design system components only: https://design-system.nhsapp.service.nhs.uk/components/
   - Avoid inline styles. If you need custom styling, add a small prototype-specific Sass file and import it.
 - Only the journey intro page may contain narrative/explanation. All other pages must look like “real app UI” (no “Step 1 of X”, no meta commentary).
+## Available Nunjucks macros (critical)
 
+Before creating pages, check `prototype/app/views/layout.html` for the macros imported into the kit. The following are **available**:
+
+| Macro | Usage |
+|-------|-------|
+| `summaryList` | Key-value pairs: `{{ summaryList({ rows: [{ key: { text: "Label" }, value: { text: "Value" } }] }) }}` |
+| `insetText` | Callout/info box: `{{ insetText({ HTML: "<p>Message</p>" }) }}` |
+| `button` | Primary action: `{{ button({ text: "Continue", href: "/pages/..." }) }}` |
+| `backLink` | Navigation: `{{ backLink({ href: "/pages/...", text: "Go back" }) }}` |
+| `nhsappCardGroup` / `nhsappCard` | Card layouts for lists |
+| `nhsappTag` | Status tags (e.g. `{{ nhsappTag({ text: "Urgent", classes: "nhsapp-tag--red" }) }}`) |
+| `nhsappTimeline` | Event timelines |
+| `nhsappBadgeSmall` / `nhsappBadgeLarge` | Notification badges |
+| `dynamicPageTitle` | Accessible page titles |
+| `relatedContentCard` | Related links |
+
+**Do NOT use** these macros (they do not exist in the kit):
+- `nhsappCallout` — use `insetText` or raw HTML: `<div class="nhsuk-warning-callout">` / `<div class="nhsuk-panel nhsuk-panel--confirmation">`
+- `nhsappSummaryCard` — use `summaryList` with `{ key: { text: ... }, value: { text: ... } }` structure
+
+For confirmation/success screens, use raw HTML:
+```html
+<div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+  <h1 class="nhsuk-panel__title">Title here</h1>
+  <div class="nhsuk-panel__body">Description here</div>
+</div>
+```
 ## Rich UX (make it feel real)
 
 Aim for a rich, believable “NHS App-like” experience, not just linked pages.
@@ -76,7 +102,8 @@ Examples of acceptable “innovations” in a prototype:
    - If `./prototype` already exists, do not delete/recreate it.
 
 2. **Start the server and keep it running**
-   - Run `cd prototype && npm run watch` in a dedicated terminal and leave it running.
+   - Run `Set-Location "<absolute-path-to-prototype>"; npm run watch` in a dedicated terminal and leave it running.
+   - **Important:** Use `Set-Location` (PowerShell) or ensure the terminal's working directory is the prototype folder before running npm commands. The `cd` command may be simplified away by the terminal tool.
 
 3. **Read the journey markdown**
    Extract:
@@ -95,7 +122,10 @@ Examples of acceptable “innovations” in a prototype:
    - All links must be absolute and start with `/pages/...`.
 
 6. **Register routes**
-   - Add a `router.get(...)` for every page you created in `prototype/app/routes.js`.
+   - **Read `prototype/app/routes.js` first** to understand the existing route patterns.
+   - Add a `router.get(...)` for every page you created.
+   - Add **all routes for the journey in a single edit** to avoid partial updates.
+   - Group journey routes with a comment, e.g. `// Journey: capturing-vitals`.
    - Example:
      ```js
      router.get('/pages/journey-foo/step-1', (req, res) => {
@@ -104,8 +134,24 @@ Examples of acceptable “innovations” in a prototype:
      ```
 
 7. **Update the hub page**
-   - Add a card/link to `prototype/app/views/pages/home-p9.html`.
-   - Link to `/pages/journey-<slug>`.
+   - Add a new **"Prototypes"** section to `prototype/app/views/pages/home-p9.html`.
+   - Place it **before** the existing "Services" section so prototypes are easy to find.
+   - Use the same card group pattern as Services but with a "Prototypes" heading.
+   - Example:
+     ```nunjucks
+     <h2 class="nhsapp-cards__heading">Prototypes</h2>
+     {{ nhsappCardGroup({
+       classes: "nhsapp-cards--stacked",
+       cards: [
+         {
+           title: "Journey Name",
+           href: "/pages/journey-<slug>",
+           description: "Brief description of the prototype"
+         }
+       ]
+     }) }}
+     ```
+   - If a "Prototypes" section already exists, add the new card to it rather than creating a duplicate section.
 
 8. **Smoke test**
    - Click through the whole main flow and each branch.

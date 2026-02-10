@@ -1,0 +1,7 @@
+# Ignore folders and all their contents
+personas/personas-report.md
+personas/data/
+personas/generated/
+prototype/
+user_journeys/data/
+scenarios/

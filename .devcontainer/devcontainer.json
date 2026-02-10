@@ -1,0 +1,45 @@
+{
+  "name": "Product Dev Copilot",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "10.0"
+    }
+  },
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "marp-team.marp-vscode",
+        "bierner.markdown-mermaid",
+        "bierner.markdown-preview-github-styles",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-python.python",
+        "ms-dotnettools.csharp"
+      ],
+      "settings": {
+        "markdown.marp.html": "all"
+      }
+    }
+  },
+  "waitFor": "onCreateCommand",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Prototype App",
+      "onAutoForward": "notify"
+    }
+  }
+}
