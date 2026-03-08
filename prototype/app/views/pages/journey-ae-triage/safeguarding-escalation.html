@@ -1,0 +1,72 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "Urgent Escalation" %}
+{% set pageDescription = "Senior clinician and interpreter services notified" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div class="nhsuk-error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">Red-flag clinical presentation</h2>
+        <ul class="nhsuk-list nhsuk-error-summary__body">
+          <li>Chest pain + shortness of breath → Potential acute coronary syndrome or PE</li>
+          <li>Moderate confidence translation (68%) + language barrier</li>
+          <li>Recommend immediate senior clinician review + human interpreter confirmation</li>
+        </ul>
+      </div>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Actions Being Taken</h2>
+          <ol class="nhsuk-list nhsuk-list--number">
+            <li><strong>Senior ED Consultant Notified</strong> – Urgent review bed assigned</li>
+            <li><strong>Human Interpreter Coordinator Contacted</strong> – Spanish interpreter being escalated (ETA: 5 mins)</li>
+            <li><strong>Cardiac Monitoring Ready</strong> – Patient will be placed on continuous monitoring</li>
+            <li><strong>Translator Verification Session</strong> – Human interpreter will verify patient statement and answer clarifying questions</li>
+          </ol>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Interpreter Connection</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div style="margin-bottom: 20px; padding: 15px; background-color: #f5f5f5; border-left: 4px solid #0066cc;">
+            <h3 class="nhsuk-heading-s">Waiting for Interpreter</h3>
+            <p class="nhsuk-body-s">Human Spanish interpreter (Rosa Pérez, accredited medical interpreter) queued.</p>
+            <p class="nhsuk-body-s"><em>Session token: TRI-2026-01-12-0847-ES</em></p>
+          </div>
+
+          <button class="nhsuk-button" onclick="connectInterpreter()" style="margin-bottom: 10px;">Connect to Interpreter</button>
+          <p class="nhsuk-body-s">Or continue to triage with enhanced clinician review:</p>
+          <a href="/pages/journey-ae-triage/triage-summary" class="nhsuk-link">Proceed to Emergency Triage</a>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Patient Summary (for clinician handover)</h2>
+      <div class="nhsuk-inset-text">
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li><strong>Chief Complaint:</strong> Chest pain (2 hours) + shortness of breath</li>
+          <li><strong>Quality:</strong> Pressure sensation, worse on breathing</li>
+          <li><strong>Language:</strong> Spanish (confidence: 68%)</li>
+          <li><strong>Support Method:</strong> Automated translation + human interpreter escalation</li>
+          <li><strong>Translation Session:</strong> TRI-2026-01-12-0847-ES</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function connectInterpreter() {
+      window.location.href = '/pages/journey-ae-triage/human-interpreter';
+    }
+  </script>
+{% endblock %}

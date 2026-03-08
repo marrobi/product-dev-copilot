@@ -1,0 +1,70 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "Live Interpreter Session" %}
+{% set pageDescription = "Rosa Pérez, Medical Interpreter (Spanish/English)" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Video Interpretation in Progress</h2>
+          <div style="width: 100%; height: 300px; background-color: #e0e0e0; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <div style="text-align: center;">
+              <p style="font-size: 48px;">📹</p>
+              <p class="nhsuk-body">Video interpreter connected</p>
+              <p class="nhsuk-body-s" style="color: #666;">Rosa Pérez is now live with the patient</p>
+            </div>
+          </div>
+
+          <h3 class="nhsuk-heading-s">Session Details</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Interpreter:</strong> Rosa Pérez, Certified Medical Interpreter (ID: RI-4521)</li>
+            <li><strong>Language Pair:</strong> Spanish ↔ English</li>
+            <li><strong>Session Start:</strong> 12 Jan 2026, 08:47</li>
+            <li><strong>Session Type:</strong> Consecutive interpretation (interpreter relays patient and clinician turns)</li>
+            <li><strong>Availability:</strong> On-call remote interpreter</li>
+          </ul>
+
+          <div class="nhsuk-inset-text">
+            <p class="nhsuk-body-s"><strong>Confidence Note:</strong> The human interpreter is now clarifying the patient's symptoms in real-time. Any gaps in the automated translation will be resolved through direct conversation.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Interpretation Transcript (as it happens)</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div style="height: 200px; overflow-y: auto; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; font-family: monospace; font-size: 14px;">
+            <p><span style="color: #0066cc;"><strong>Interpreter:</strong></span> Rosa is greeting the patient and explaining the interpretation process...</p>
+            <p style="margin-top: 10px;"><span style="color: #009900;"><strong>Patient (via interpreter):</strong></span> "The pain started about 2 hours ago when I was at home. It's like a heavy weight on my chest."</p>
+            <p style="margin-top: 10px;"><span style="color: #cc0000;"><strong>Nurse:</strong></span> "Is the pain constant or does it come and go?"</p>
+            <p style="margin-top: 10px;"><span style="color: #009900;"><strong>Patient (via interpreter):</strong></span> "It's mostly constant, but it gets worse when I take a deep breath."</p>
+            <p style="margin-top: 10px;"><strong>Interpretation ongoing...</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Next Steps</h2>
+      <div class="nhsuk-form-group">
+        <p class="nhsuk-body">Once the interpreter session is complete, the clinician will proceed with triage documentation.</p>
+        <button class="nhsuk-button" onclick="completeInterpreter()">Interpretation Complete – Proceed to Triage</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function completeInterpreter() {
+      window.location.href = '/pages/journey-ae-triage/triage-summary';
+    }
+  </script>
+{% endblock %}

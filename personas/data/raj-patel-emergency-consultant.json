@@ -1,0 +1,34 @@
+{
+  "name": "Raj Patel",
+  "jobTitle": "Emergency Medicine Consultant (Clinical Lead)",
+  "slideTitle": "EMERGENCY MEDICINE CONSULTANT",
+  "experience": "20 years in Emergency Medicine, 3 years as ED Clinical Lead",
+  "location": "Urban NHS Trust - Emergency Department",
+  "department": "Emergency Department",
+  "photo": "../images/placeholder.jpg",
+  "photoPrompt": "Photorealistic headshot of a senior NHS Emergency Medicine consultant (age ~50, British Indian man), business-casual clinical attire (white shirt, navy blazer), warm confident expression, soft clinical-lit hospital background slightly blurred, sharp focus, natural skin tones, no text",
+  "background": [
+    "I've led ED teams for two decades and champion patient safety.",
+    "I grew up bilingual in a Gujarati household and appreciate language needs.",
+    "I oversee clinical flow and 4-hour target performance in a busy urban ED.",
+    "I’ve experienced critical incidents from miscommunication that changed my practice"
+  ],
+  "goals": [
+    "Ensure every patient receives safe, timely treatment regardless of language",
+    "Reduce diagnostic errors and adverse events caused by language gaps",
+    "Integrate interpreter/transcription outputs into the EPR for medico-legal safety",
+    "Cut communication-related delays in triage by at least 5-10 minutes"
+  ],
+  "wants": [
+    "A one-click solution that auto-detects language and starts real-time clinical translation",
+    "Medical terminology fidelity (e.g., drug names, symptom nuance) with clinical accuracy",
+    "Automatic transcript or note integration into the EPR",
+    "A reliable system that works in resus and noisy ED environments"
+  ],
+  "painPoints": [
+    "Interpreter delays during critical cases leading to unsafe care",
+    "Inaccurate ad-hoc translation by relatives or staff",
+    "Lack of integration: phone interpreters don't document into patient records",
+    "Consent conversations are challenging via speakerphone interpreters in emergencies"
+  ]
+}

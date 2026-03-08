@@ -1,0 +1,76 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "Triage Review" %}
+{% set pageDescription = "Spanish to English translation" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <h2 class="nhsuk-heading-m">Patient Statement (Original)</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-body"><em>«He tenido dolor en el pecho durante dos horas. Es una presión fuerte, especialmente cuando respiro. También siento un poco de falta de aliento.»</em></p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Automated Translation (English)</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-body">"I have had chest pain for two hours. It is a strong pressure, especially when I breathe. I also feel shortness of breath."</p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Confidence Assessment</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div style="margin-bottom: 20px;">
+            <h3 class="nhsuk-heading-s">Overall Confidence: <strong style="color: #d4603b;">68%</strong></h3>
+            <p class="nhsuk-body-s">Segments with lower confidence are highlighted below.</p>
+          </div>
+
+          <h4 class="nhsuk-heading-xs">Phrase-level confidence:</h4>
+          <ul class="nhsuk-list">
+            <li><strong>«dolor en el pecho»</strong> → "chest pain" <span style="background-color: #90ee90; padding: 2px 6px; border-radius: 3px; font-size: 12px;">95%</span></li>
+            <li><strong>«dos horas»</strong> → "two hours" <span style="background-color: #90ee90; padding: 2px 6px; border-radius: 3px; font-size: 12px;">92%</span></li>
+            <li><strong>«presión fuerte»</strong> → "strong pressure" <span style="background-color: #ffeb99; padding: 2px 6px; border-radius: 3px; font-size: 12px;">74%</span></li>
+            <li><strong>«cuando respiro»</strong> → "when I breathe" <span style="background-color: #ffeb99; padding: 2px 6px; border-radius: 3px; font-size: 12px;">69%</span></li>
+            <li><strong>«falta de aliento»</strong> → "shortness of breath" <span style="background-color: #90ee90; padding: 2px 6px; border-radius: 3px; font-size: 12px;">88%</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nhsuk-callout nhsuk-callout--warning">
+        <h3 class="nhsuk-heading-s">⚠️ Red Flag Detected</h3>
+        <p class="nhsuk-body-s"><strong>Chest pain + shortness of breath</strong> are urgent clinical keywords. Recommend immediate escalation to senior clinician and offer human interpreter confirmation.</p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Clinician Actions</h2>
+      <div class="nhsuk-form-group">
+        <p class="nhsuk-body"><strong>Due to the red-flag symptoms (chest pain + dyspnoea) and moderate confidence, recommend:</strong></p>
+        
+        <div style="margin: 20px 0;">
+          <button class="nhsuk-button" onclick="escalateUrgent()">Escalate to Senior Clinician (Urgent)</button>
+          <a href="/pages/journey-ae-triage/human-interpreter" class="nhsuk-button nhsuk-button--secondary" style="display: inline-block; margin-left: 10px;">Request Human Interpreter</a>
+        </div>
+        
+        <p class="nhsuk-body-s">Or, if confident with the automated translation:</p>
+        <a href="/pages/journey-ae-triage/triage-summary" class="nhsuk-link">Proceed with triage decision</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function escalateUrgent() {
+      window.location.href = '/pages/journey-ae-triage/safeguarding-escalation';
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{
+  "name": "Lauren Thompson",
+  "jobTitle": "Chief Information Officer",
+  "slideTitle": "CHIEF INFORMATION OFFICER",
+  "experience": "15 years in NHS IT and digital transformation",
+  "location": "NHS Trust - Corporate HQ",
+  "department": "Informatics / Digital",
+  "photo": "../images/placeholder.jpg",
+  "photoPrompt": "Photorealistic headshot of a mid-40s British woman (Welsh-English heritage), professional attire (blazer), confident approachable expression, soft office lighting, modern corporate background slightly blurred, sharp focus, natural skin tones, no text",
+  "background": [
+    "I led previous EPR rollouts and now sponsor digital hospital initiatives.",
+    "I grew up bilingual (Welsh-English) and am passionate about supporting language needs.",
+    "I manage IT strategy, vendor contracts, and digital governance at trust level.",
+    "I am responsible for uptime, integration, and compliance across clinical systems"
+  ],
+  "goals": [
+    "Deliver an integrated translation service that measurably improves equity and patient experience",
+    "Achieve high uptime and integration with EPR and single sign-on",
+    "Demonstrate ROI by reducing interpreter spend while maintaining quality",
+    "Ensure training completion and adoption across clinical staff (>95%)"
+  ],
+  "wants": [
+    "Enterprise-grade reliability (99% uptime) and NHS-compliant security",
+    "Analytics dashboard showing usage, languages, and cost savings",
+    "APIs/HL7-FHIR integration to save transcripts into patient records",
+    "Vendor documentation and a clear support contract with SLAs"
+  ],
+  "painPoints": [
+    "Fragmented interpreter services and lack of data for decision-making",
+    "Compliance risks if communication needs aren’t documented",
+    "Procurement and scaling challenges across the trust",
+    "Staff resistance to new tech due to change fatigue"
+  ]
+}

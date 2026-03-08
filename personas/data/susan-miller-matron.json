@@ -1,0 +1,34 @@
+{
+  "name": "Susan Miller",
+  "jobTitle": "Emergency Department Matron (Band 8a)",
+  "slideTitle": "EMERGENCY DEPARTMENT MATRON",
+  "experience": "18 years in nursing, 10 in A&E, 3 as Matron",
+  "location": "Urban NHS Trust - Emergency Department",
+  "department": "Emergency Department",
+  "photo": "../images/placeholder.jpg",
+  "photoPrompt": "Photorealistic headshot of a British woman in her early 40s (senior nurse), professional nursing attire or smart casual, confident caring expression, hospital corridor background slightly blurred, sharp focus, natural tones",
+  "background": [
+    "I started as a staff nurse in this ED and progressed to Matron overseeing operations.",
+    "I champion practical solutions that keep the department running smoothly.",
+    "I ensure devices are available at triage and staff are confident using them.",
+    "I value efficient workflows and staff wellbeing during busy shifts"
+  ],
+  "goals": [
+    "Ensure safe, efficient nursing care where language barriers do not delay treatment",
+    "Reduce time-to-triage and time-to-analgesia for patients with limited English",
+    "Embed translator usage into nursing protocols and handovers",
+    "Improve documentation quality when communication needs exist"
+  ],
+  "wants": [
+    "Devices available at triage and resus with spare units for peak times",
+    "Quick reliable translation in noisy ED environments (headset/offline modes)",
+    "Simple workflows so nurses aren’t slowed by tech in emergencies",
+    "Charge/check protocols and superuser champions on each shift"
+  ],
+  "painPoints": [
+    "Triage bottlenecks when language prevents efficient history taking",
+    "Staff morale hit when nurses feel helpless managing LEP patients",
+    "Device contention during peak times and occasional dialect gaps",
+    "Privacy and noise issues when using speaker output in ED"
+  ]
+}

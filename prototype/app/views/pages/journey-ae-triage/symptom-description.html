@@ -1,0 +1,60 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "Describe Your Symptoms" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <div class="nhsuk-inset-text">
+        <p class="nhsuk-body">The triage nurse is ready to listen. Please describe what has brought you to A&E today.</p>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="symptom-description">
+          <h3 class="nhsuk-heading-m">What symptoms are you experiencing?</h3>
+        </label>
+        <textarea class="nhsuk-textarea" id="symptom-description" name="symptom-description" rows="6" placeholder="Describe your symptoms in your own language. Include how long you've had them, where it hurts, and how severe it is..."></textarea>
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Tips for describing your symptoms</span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Where does it hurt or feel wrong?</li>
+            <li>When did it start?</li>
+            <li>Is it getting worse, better, or staying the same?</li>
+            <li>Have you had this before?</li>
+            <li>Are you taking any medicines?</li>
+            <li>Do you have any allergies?</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="nhsuk-form-group nhsuk-form-group--section-margin">
+        <button class="nhsuk-button" onclick="submitSymptoms()">Submit & Continue</button>
+        <a href="/pages/journey-ae-triage/language-selection" class="nhsuk-link">Back</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function submitSymptoms() {
+      const symptoms = document.querySelector('#symptom-description').value.trim();
+      if (!symptoms) {
+        alert('Please describe your symptoms before continuing.');
+        return;
+      }
+      window.location.href = '/pages/journey-ae-triage/translation-in-progress';
+    }
+  </script>
+{% endblock %}

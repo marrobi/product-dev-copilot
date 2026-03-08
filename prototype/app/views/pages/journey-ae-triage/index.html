@@ -1,0 +1,35 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "A&E Arrival — Immediate Triage & Translation" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-l">Journey Overview</h2>
+          <p class="nhsuk-body">This journey simulates a patient arriving at A&E with immediate language or communication support needs, moving through rapid triage with real-time translation and interpretation services.</p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Key Scenarios</h2>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><strong>Auto‑translation sufficient:</strong> Clinician accepts automated translation and proceeds with standard triage.</li>
+        <li><strong>Low confidence trigger:</strong> System confidence drops below threshold; offer human interpreter.</li>
+        <li><strong>Red-flag clinical scenario:</strong> Safeguarding or urgent medical keywords trigger escalation.</li>
+        <li><strong>Accessibility needs:</strong> Patient requires alternative communication (BSL, read‑aloud, simplified text).</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">Start the Journey</h2>
+      <a href="/pages/journey-ae-triage/language-selection" class="nhsuk-button">Begin Triage</a>
+
+    </div>
+  </div>
+{% endblock %}

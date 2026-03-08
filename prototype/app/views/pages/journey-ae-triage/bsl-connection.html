@@ -1,0 +1,47 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "British Sign Language (BSL) Interpreter" %}
+{% set pageDescription = "Connecting you to a BSL interpreter" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Setting Up Video Call</h2>
+          <div style="width: 100%; height: 300px; background-color: #e0e0e0; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <div style="text-align: center;">
+              <p style="font-size: 48px;">📞</p>
+              <p class="nhsuk-body">Connecting to BSL interpreter...</p>
+              <p class="nhsuk-body-s" style="color: #666;">Please wait a moment while we find an available interpreter</p>
+            </div>
+          </div>
+
+          <h3 class="nhsuk-heading-s">Interpreter Details</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Service:</strong> NHS BSL Video Interpretation (On-demand)</li>
+            <li><strong>Interpreter Quality:</strong> Registered interpreter with medical specialism</li>
+            <li><strong>Expected Wait:</strong> 2–5 minutes</li>
+            <li><strong>Session Type:</strong> Real-time video interpretation</li>
+          </ul>
+        </div>
+      </div>
+
+      <script>
+        // Simulate connection delay
+        setTimeout(() => {
+          window.location.href = '/pages/journey-ae-triage/bsl-active';
+        }, 3000);
+      </script>
+
+    </div>
+  </div>
+{% endblock %}

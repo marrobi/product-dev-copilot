@@ -1,0 +1,35 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "Translating Your Symptoms" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-body">Our translation service is processing your information...</p>
+          <div style="margin: 20px 0; padding: 20px; background-color: #f0f0f0; border-radius: 4px; text-align: center;">
+            <p style="font-size: 24px; color: #0066cc;">⟳</p>
+            <p class="nhsuk-body-s">Analysing symptoms and preparing translation</p>
+          </div>
+          <p class="nhsuk-body-s">This usually takes 15–30 seconds.</p>
+        </div>
+      </div>
+
+      <script>
+        // Simulate processing delay
+        setTimeout(() => {
+          window.location.href = '/pages/journey-ae-triage/translation-review';
+        }, 2000);
+      </script>
+
+    </div>
+  </div>
+{% endblock %}

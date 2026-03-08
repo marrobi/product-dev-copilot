@@ -1,0 +1,95 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "Triage Decision" %}
+{% set pageDescription = "Manchester Triage System assessment" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <h2 class="nhsuk-heading-m">Summary of Clinical Presentation</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-s">Chief Complaint</h3>
+          <p class="nhsuk-body"><strong>Chest pain (2 hours) + shortness of breath</strong></p>
+
+          <h3 class="nhsuk-heading-s">Key Findings</h3>
+          <ul class="nhsuk-list">
+            <li>Pressure-type chest pain, worse on inspiration</li>
+            <li>Associated dyspnoea</li>
+            <li>Onset 2 hours ago, constant</li>
+            <li>Language: Spanish (verified via human interpreter)</li>
+            <li>Translation confidence: Elevated through human interpreter confirmation</li>
+          </ul>
+
+          <h3 class="nhsuk-heading-s">Translation Session Record</h3>
+          <p class="nhsuk-body-s">
+            <strong>Session:</strong> TRI-2026-01-12-0847-ES<br>
+            <strong>Interpreter:</strong> Rosa Pérez (Medical Interpreter, certified)<br>
+            <strong>Duration:</strong> 8 minutes<br>
+            <strong>Method:</strong> Consecutive interpretation (video)<br>
+            <strong>Confidence:</strong> High (human verification completed)
+          </p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Manchester Triage Category</h2>
+      <div class="nhsuk-card" style="border-left: 5px solid #d4603b;">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-s" style="color: #d4603b;">Category 2: URGENT</h3>
+          <p class="nhsuk-body">
+            Immediate assessment and investigation required.
+          </p>
+          <p class="nhsuk-body-s">
+            <strong>Target time to be seen by a clinician:</strong> 10 minutes
+          </p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Clinical Actions</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <ol class="nhsuk-list nhsuk-list--number">
+            <li><strong>Immediate:</strong> Assign to monitored ED bed; continuous cardiac monitoring</li>
+            <li><strong>Within 10 mins:</strong> ECG, troponin, D-dimer, chest X-ray</li>
+            <li><strong>Senior assessment:</strong> ED registrar or consultant review</li>
+            <li><strong>Differential:</strong> Acute coronary syndrome, pulmonary embolism, aortic dissection (rule-outs in order)</li>
+            <li><strong>Interpreter availability:</strong> Spanish interpreter assigned on-call for ongoing communication</li>
+          </ol>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Patient Handover Summary</h2>
+      <div class="nhsuk-inset-text">
+        <h3 class="nhsuk-heading-s">For Patient & Family</h3>
+        <p class="nhsuk-body">
+          <strong>You have been triaged as URGENT.</strong> You will be taken to a bed where you can be monitored closely. 
+          The nurse will place you on a heart monitor and take some blood tests and images to find out what is causing your chest pain. 
+          A doctor will see you very soon—within 10 minutes.
+        </p>
+        <p class="nhsuk-body-s">
+          An interpreter will be available if you need to speak with the medical team in Spanish.
+        </p>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Next Step</h2>
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" onclick="proceedToDisposition()">Complete Triage – Transfer to ED Bay</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function proceedToDisposition() {
+      window.location.href = '/pages/journey-ae-triage/completion';
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "How would you like to communicate?" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <div class="nhsuk-fieldset">
+        <legend class="nhsuk-legend--l">
+          <h2 class="nhsuk-legend__heading">
+            Select your preferred communication method
+          </h2>
+        </legend>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional" data-module="radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="option-speech" name="communication-method" type="radio" value="speech" data-aria-controls="conditional-speech">
+            <label class="nhsuk-label nhsuk-radios__label" for="option-speech">
+              <strong>Spoken interpretation</strong><br>
+              <span class="nhsuk-hint">Describe your symptoms in your own language; automatic translation will help the clinician understand</span>
+            </label>
+          </div>
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-speech">
+            <p class="nhsuk-body-s">A translation service will provide live interpretation of your symptoms.</p>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="option-text" name="communication-method" type="radio" value="text" data-aria-controls="conditional-text">
+            <label class="nhsuk-label nhsuk-radios__label" for="option-text">
+              <strong>Typed input with translation</strong><br>
+              <span class="nhsuk-hint">Type your symptoms; the system will translate for the clinician</span>
+            </label>
+          </div>
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-text">
+            <p class="nhsuk-body-s">You will be able to type, and the system will show translated text to the clinician.</p>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="option-bsl" name="communication-method" type="radio" value="bsl" data-aria-controls="conditional-bsl">
+            <label class="nhsuk-label nhsuk-radios__label" for="option-bsl">
+              <strong>British Sign Language (BSL)</strong><br>
+              <span class="nhsuk-hint">Connect to a video interpreter who uses BSL</span>
+            </label>
+          </div>
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-bsl">
+            <p class="nhsuk-body-s">A qualified BSL interpreter will be available via video call.</p>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="option-family" name="communication-method" type="radio" value="family" data-aria-controls="conditional-family">
+            <label class="nhsuk-label nhsuk-radios__label" for="option-family">
+              <strong>Family or carer proxy</strong><br>
+              <span class="nhsuk-hint">Have a family member or carer help communicate your symptoms</span>
+            </label>
+          </div>
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-family">
+            <p class="nhsuk-body-s">Your family member or carer can help communicate with the clinician.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="nhsuk-fieldset nhsuk-fieldset--section-margin">
+        <fieldset>
+          <legend class="nhsuk-legend--m">
+            <h3 class="nhsuk-legend__heading">Language</h3>
+          </legend>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="language-select">
+              Which language do you speak?
+            </label>
+            <select class="nhsuk-select" id="language-select" name="language">
+              <option value="">Select a language</option>
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="ar">Arabic</option>
+              <option value="zh">Mandarin Chinese</option>
+              <option value="ur">Urdu</option>
+              <option value="bn">Bengali</option>
+              <option value="pa">Punjabi</option>
+              <option value="other">Other (please tell staff)</option>
+            </select>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" onclick="continueTriage()">Continue to Triage</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function continueTriage() {
+      const method = document.querySelector('input[name="communication-method"]:checked');
+      const language = document.querySelector('#language-select');
+      
+      if (!method || !language.value) {
+        alert('Please select both a communication method and language.');
+        return;
+      }
+      
+      // Route based on selection
+      if (method.value === 'bsl') {
+        window.location.href = '/pages/journey-ae-triage/bsl-connection';
+      } else if (method.value === 'family') {
+        window.location.href = '/pages/journey-ae-triage/symptom-description';
+      } else {
+        window.location.href = '/pages/journey-ae-triage/symptom-description';
+      }
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'layout-app.html' %}
+
+{% set pageHeading = "BSL Interpretation in Progress" %}
+{% set pageDescription = "Live video session with qualified interpreter" %}
+{% set backLink = true %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Video Interpretation Window</h2>
+          <div style="width: 100%; height: 350px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: white;">
+            <div style="text-align: center;">
+              <p style="font-size: 64px;">👋</p>
+              <p class="nhsuk-body" style="color: white;"><strong>BSL Interpreter Connected</strong></p>
+              <p class="nhsuk-body-s" style="color: #ddd;">Qualified medical interpreter is now visible on screen</p>
+            </div>
+          </div>
+
+          <h3 class="nhsuk-heading-s">Session Information</h3>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><strong>Interpreter:</strong> Qualified BSL Interpreter (Medical Specialism)</li>
+            <li><strong>Connection Quality:</strong> Stable, HD video and audio</li>
+            <li><strong>Session Type:</strong> Real-time BSL interpretation</li>
+            <li><strong>Session Started:</strong> 12 Jan 2026, 08:54</li>
+            <li><strong>Patient:</strong> Can now communicate directly with triage nurse using BSL</li>
+          </ul>
+
+          <div class="nhsuk-inset-text">
+            <p class="nhsuk-body-s">The BSL interpreter will relay the patient's communication to the triage nurse in English, and translate the nurse's questions back into BSL. This ensures clear, direct communication throughout the triage process.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Communication Flow</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-body"><strong>Patient</strong> (BSL) ↔ <strong>Interpreter</strong> ↔ <strong>Triage Nurse</strong> (English)</p>
+          <p class="nhsuk-body-s">All communication is interpreted in real-time. The interpreter can also explain medical terminology or cultural considerations as needed.</p>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-m">Next Steps</h2>
+      <p class="nhsuk-body">
+        The patient will now describe their symptoms via BSL. The interpreter will relay this to the triage nurse. Once symptoms are documented, proceed to triage assessment.
+      </p>
+
+      <div class="nhsuk-form-group">
+        <button class="nhsuk-button" onclick="completeBSL()">Symptoms Described – Proceed to Triage</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function completeBSL() {
+      window.location.href = '/pages/journey-ae-triage/triage-summary';
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{
+  "name": "Daniel Green",
+  "jobTitle": "Interpreter Services Coordinator (PALS)",
+  "slideTitle": "INTERPRETER SERVICES COORDINATOR",
+  "experience": "4 years coordinating interpreter logistics",
+  "location": "NHS Trust - Patient Liaison",
+  "department": "Patient Administration / PALS",
+  "photo": "../images/placeholder.jpg",
+  "photoPrompt": "Photorealistic headshot of a man in his early 30s (health admin), casual-professional attire, friendly attentive expression, office background slightly blurred, sharp focus",
+  "background": [
+    "I manage bookings for telephone and face-to-face interpreters across the hospital.",
+    "I keep detailed stats on language demand and coordinate with vendor partners.",
+    "I’m tech-savvy and interested in analytics to optimize services.",
+    "I once started as a PALS officer and evolved into this specialist role"
+  ],
+  "goals": [
+    "Ensure every patient who needs language support gets it promptly",
+    "Optimize interpreter spend by using AI for ad-hoc cases and reserving humans for complex needs",
+    "Provide clear guidance to staff on when to use AI vs human interpreters",
+    "Use analytics to plan staffing and language coverage"
+  ],
+  "wants": [
+    "Admin dashboard with usage logs and language breakdowns",
+    "Automated reporting to replace manual invoice parsing",
+    "Clear escalation paths when AI cannot handle a language or dialect",
+    "Ability to set templates or saved phrases for frequent instructions"
+  ],
+  "painPoints": [
+    "24/7 urgent interpreter requests and limited availability for rare languages",
+    "Manual invoice reconciliation and time-consuming admin",
+    "Quality assurance: ensuring AI output is clinically accurate and culturally appropriate",
+    "Adapting his role from dispatcher to system quality manager"
+  ]
+}

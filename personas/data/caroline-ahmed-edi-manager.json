@@ -1,0 +1,34 @@
+{
+  "name": "Caroline Ahmed",
+  "jobTitle": "Equality & Inclusion Manager (Patient Experience Lead)",
+  "slideTitle": "EQUALITY & INCLUSION MANAGER",
+  "experience": "5 years in EDI and patient experience roles",
+  "location": "NHS Trust - Patient Experience",
+  "department": "Patient Experience / EDI",
+  "photo": "../images/placeholder.jpg",
+  "photoPrompt": "Photorealistic headshot of a British Pakistani woman in her 40s, business-casual attire, warm empathetic expression, soft community-facing office background, sharp focus, natural lighting, no text",
+  "background": [
+    "I transitioned from speech and language therapy into EDI work to improve access for vulnerable groups.",
+    "I’m multilingual (Urdu, Punjabi) and deeply involved in community outreach.",
+    "I manage patient feedback, complaints related to communication, and AIS compliance.",
+    "I coordinate culturally appropriate resources and staff training on communication needs"
+  ],
+  "goals": [
+    "Ensure patients receive information in a way they understand (Accessible Information Standard)",
+    "Reduce complaints related to language and communication to near zero",
+    "Increase trust and engagement among minority communities through better communication",
+    "Support staff with training and tools to address communication needs empathetically"
+  ],
+  "wants": [
+    "Near-human translation accuracy and cultural competence in phrasing",
+    "Easy-read outputs and adjustable literacy levels for patient materials",
+    "Quick generation of translated leaflets and surveys for immediate patient feedback",
+    "Mechanisms to monitor issues and escalate if translations fail"
+  ],
+  "painPoints": [
+    "Relying on ad-hoc family interpreters and inappropriate alternatives",
+    "Slow turnaround for written translations that renders them useless at discharge",
+    "Gaps in accessibility for Deaf or low-literacy patients",
+    "Sustaining adoption after initial rollout (change fatigue)"
+  ]
+}
